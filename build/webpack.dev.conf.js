@@ -55,7 +55,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: true
+      inject: true,
+      chunks: ['app']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'inlay.html',
+      template: 'inlay.html',
+      inject: true,
+      chunks: ['inlay']
     }),
     // copy custom static assets
     new CopyWebpackPlugin([
